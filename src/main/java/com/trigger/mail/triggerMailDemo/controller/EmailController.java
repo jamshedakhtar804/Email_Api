@@ -9,6 +9,7 @@ import com.trigger.mail.triggerMailDemo.service.EmailService;
 import org.apache.log4j.Logger;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -51,5 +52,20 @@ public class EmailController {
         AppLog.info("status= "+status);
 
         return status.toString();
+    }
+
+    @GetMapping("/")
+    public String hello(){
+        return "Hello, world!!";
+    }
+
+    @GetMapping("/user")
+    public String userDetails(){
+        return "Hi, User";
+    }
+
+    @GetMapping("/admin")
+    public String adminDetails(){
+        return "Hi, Admin";
     }
 }
